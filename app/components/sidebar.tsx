@@ -9,7 +9,7 @@ import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import Locale from "../locales";
-
+import { UPDATE_URL1 } from "../constant";
 import { useAppConfig, useChatStore } from "../store";
 
 import {
@@ -21,6 +21,7 @@ import {
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
+import Linka from "next/link";
 import { useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 
@@ -90,10 +91,14 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>ChatGPT Next</div>
+        <div className={styles["sidebar-title"]}>搏老师的chatGPT镜像</div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+          购买chatGpt账号的请添加微信:boaibo0626
         </div>
+        <br />
+        <Linka href={UPDATE_URL1} target="_blank" className="link">
+          {"赞赏一下，以致鼓励"}
+        </Linka>
         <div className={styles["sidebar-logo"]}>
           <ChatGptIcon />
         </div>
@@ -123,11 +128,11 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
-          <div className={styles["sidebar-action"]}>
+          {/* <div className={styles["sidebar-action"]}>
             <a href={REPO_URL} target="_blank">
               <IconButton icon={<GithubIcon />} shadow />
             </a>
-          </div>
+          </div> */}
         </div>
         <div>
           <IconButton
