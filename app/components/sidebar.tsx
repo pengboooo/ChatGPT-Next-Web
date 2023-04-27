@@ -96,6 +96,11 @@ export function SideBar(props: { className?: string }) {
           购买chatGpt账号的请添加微信:boaibo0626
         </div>
         <br />
+        <div className={styles["sidebar-sub-title"]}>
+          账号30元一个，量大有优惠，买账号送谷歌邮箱。
+        </div>
+        <br />
+        <br />
         <Linka href={UPDATE_URL1} target="_blank" className="link">
           {"赞赏一下，以致鼓励"}
         </Linka>
