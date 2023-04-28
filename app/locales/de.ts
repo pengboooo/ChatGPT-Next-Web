@@ -6,6 +6,8 @@ const de: LocaleType = {
   Error: {
     Unauthorized:
       "Unbefugter Zugriff, bitte geben Sie den Zugangscode auf der Einstellungsseite ein.",
+    Unaukey:
+      "您的key输入错误，请到https://platform.openai.com/account/api-keys,获取您账号的key，如果您没有chatgpt账号，请联系微信:boaibo0626,购买官方正版chatGPT账号。",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} Nachrichten`,

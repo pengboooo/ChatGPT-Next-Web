@@ -3,7 +3,9 @@ import { SubmitKey } from "../store/config";
 const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
-    Unauthorized: "现在是未授权状态，请点击左下角设置按钮输入访问密码。",
+    Unauthorized: "您未填写KEY,请点击左下角设置按钮输入API key",
+    Unaukey:
+      "您的key输入错误，请到https://platform.openai.com/account/api-keys,获取您账号的key，如果您没有chatgpt账号，请联系微信:boaibo0626,购买官方正版chatGPT账号。",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
@@ -122,7 +124,7 @@ const cn = {
     Token: {
       Title: "API Key",
       SubTitle: "使用自己的 Key 可绕过密码访问限制",
-      Placeholder: "OpenAI API Key",
+      Placeholder: "OpenAI Key",
     },
     Usage: {
       Title: "余额查询",

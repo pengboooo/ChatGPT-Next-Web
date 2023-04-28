@@ -281,6 +281,8 @@ export const useChatStore = create<ChatStore>()(
           onError(error, statusCode) {
             if (statusCode === 401) {
               botMessage.content = Locale.Error.Unauthorized;
+            } else if (error.message.includes("account/api-keys")) {
+              botMessage.content = Locale.Error.Unaukey;
             } else if (!error.message.includes("aborted")) {
               botMessage.content += "\n\n" + Locale.Store.Error;
             }

@@ -5,6 +5,8 @@ const tw: LocaleType = {
   WIP: "該功能仍在開發中……",
   Error: {
     Unauthorized: "目前您的狀態是未授權，請前往設定頁面輸入授權碼。",
+    Unaukey:
+      "您的key输入错误，请到https://platform.openai.com/account/api-keys,获取您账号的key，如果您没有chatgpt账号，请联系微信:boaibo0626,购买官方正版chatGPT账号。",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 條對話`,

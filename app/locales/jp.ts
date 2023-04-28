@@ -5,6 +5,8 @@ const jp = {
   Error: {
     Unauthorized:
       "現在は未承認状態です。左下の設定ボタンをクリックし、アクセスパスワードを入力してください。",
+    Unaukey:
+      "您的key输入错误，请到https://platform.openai.com/account/api-keys,获取您账号的key，如果您没有chatgpt账号，请联系微信:boaibo0626,购买官方正版chatGPT账号。",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 通のチャット`,
