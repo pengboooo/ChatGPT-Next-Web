@@ -96,8 +96,11 @@ export function SideBar(props: { className?: string }) {
           购买chatGpt账号的请添加微信:boaibo0626
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          账号30元一个，量大有优惠，买账号送谷歌邮箱。
-          <span className={styles["sidebar-sub-red"]}>一人一号，改一赔十</span>
+          账号30元一个,买账号送谷歌邮箱。
+          <br />
+          <span className={styles["sidebar-sub-red"]}>
+            承诺:一人一号，改一赔十
+          </span>
         </div>
         <Linka href={UPDATE_URL1} target="_blank" className="link">
           {"赞赏一下，以致鼓励"}
