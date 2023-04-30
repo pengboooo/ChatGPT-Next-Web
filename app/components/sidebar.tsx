@@ -99,18 +99,26 @@ export function SideBar(props: { className?: string }) {
       <div className={styles["sidebar-header"]}>
         <div className={styles["sidebar-title"]}>搏老师的chatGPT镜像</div>
         <div className={styles["sidebar-sub-title"]}>
-          购买chatGpt账号的请添加微信:boaibo0626
+          购买key的请添加微信:boaibo0626
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          账号30元一个,买账号送谷歌邮箱。
+          key30元一个,买key送chatgpt账号送谷歌邮箱
           <br />
           <span className={styles["sidebar-sub-red"]}>
             承诺:一人一号，改一赔十
           </span>
         </div>
-        <Linka href={UPDATE_URL1} target="_blank" className="link">
-          {"赞赏一下，以致鼓励"}
-        </Linka>
+        <div>
+          <span>网站已赔近2万+:</span>
+          <Linka
+            href={UPDATE_URL1}
+            target="_blank"
+            className={styles["links"] + "link"}
+          >
+            {"赞赏一下,以致鼓励"}
+          </Linka>
+        </div>
+
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
         </div>

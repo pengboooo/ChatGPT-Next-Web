@@ -16,7 +16,9 @@
   width: var(--window-width);
   height: var(--window-height);
 }
-
+.links{
+  text-decoration: underline;
+}
 .container {
   @include container();
 }
