@@ -68,7 +68,7 @@ const cn = {
       ConfirmClearAll: "确认清除所有数据？",
     },
     Lang: {
-      Name: "Language",
+      Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "所有语言",
       Options: {
         cn: "简体中文",
@@ -80,6 +80,7 @@ const cn = {
         jp: "日本語",
         de: "Deutsch",
         vi: "Vietnamese",
+        ru: "Русский",
       },
     },
     Avatar: "头像",
@@ -150,7 +151,7 @@ const cn = {
     },
     AccessCode: {
       Title: "访问密码",
-      SubTitle: "已开启加密访问",
+      SubTitle: "管理员已开启加密访问",
       Placeholder: "请输入访问密码",
     },
     Model: "模型 (model)",
