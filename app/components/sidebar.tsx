@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./home.module.scss";
 
@@ -11,6 +11,7 @@ import CloseIcon from "../icons/close.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 
+import ZfbandWx from "../icons/zfbandwx.svg";
 import Locale from "../locales";
 import { UPDATE_URL1 } from "../constant";
 import { useAppConfig, useChatStore } from "../store";
@@ -28,6 +29,7 @@ import Linka from "next/link";
 import { useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showToast } from "./ui-lib";
+import { request } from "http";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
@@ -102,6 +104,40 @@ function useDragSideBar() {
     shouldNarrow,
   };
 }
+function Modal(props: any) {
+  const { show, handleClose, children } = props;
+
+  return (
+    <div>
+      {show && (
+        <div className={styles["modal"]}>
+          <div className={styles["modal-content"]}>
+            {/* <span className="close" onClick={handleClose}>
+              &times;
+            </span> */}
+            <span className={styles["modal-content-span"]}>
+              友情提醒: chatgpt账号30元，可直接在镜像中使用，也可在官网使用。
+              <br />
+              支付完请带着支付截图，
+              <br />
+              <span className={styles["sidebar-sub-red"]}>
+                联系微信:boaibo0626 或者QQ:1223577600 领取你的账号
+              </span>
+            </span>
+            {children}
+            <div className={styles["modal-content-btn"]}>
+              <IconButton
+                className={styles["sidebar-bar-button"]}
+                text="返回"
+                onClick={handleClose}
+              ></IconButton>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function SideBar(props: { className?: string }) {
   const chatStore = useChatStore();
@@ -110,9 +146,11 @@ export function SideBar(props: { className?: string }) {
   const { onDragMouseDown, shouldNarrow } = useDragSideBar();
   const navigate = useNavigate();
   const config = useAppConfig();
-
+  const [showModal, setShowModal] = useState(false);
   useHotKey();
-
+  const handleClose = () => {
+    setShowModal(false);
+  };
   return (
     <div
       className={`${styles.sidebar} ${props.className} ${
@@ -131,15 +169,31 @@ export function SideBar(props: { className?: string }) {
             承诺:一人一号，改一赔十
           </span>
         </div>
-        <div>
-          <span>网站已赔近2万+:</span>
-          <Linka
+        <div className={styles["sidebar-sub-SP"]}>
+          <span className={styles["sidebar-sub-text"]}>直接购买:</span>
+          <div className={styles["sidebar-sub-reds"]}>
+            <IconButton
+              className={styles["sidebar-bar-button"] + " sidebar-bar-buttons"}
+              text="支付宝"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            ></IconButton>
+            <IconButton
+              className={styles["sidebar-bar-button"]}
+              text="微信"
+              onClick={() => {
+                setShowModal(true);
+              }}
+            ></IconButton>
+          </div>
+          {/* <Linka
             href={UPDATE_URL1}
             target="_blank"
             className={styles["links"] + "link"}
           >
             {"赞赏一下,以致鼓励"}
-          </Linka>
+          </Linka> */}
         </div>
 
         <div className={styles["sidebar-logo"] + " no-dark"}>
@@ -219,6 +273,9 @@ export function SideBar(props: { className?: string }) {
         className={styles["sidebar-drag"]}
         onMouseDown={(e) => onDragMouseDown(e as any)}
       ></div>
+      <Modal show={showModal} handleClose={handleClose}>
+        {<img className={styles["sidebar-img"]} src="/wxandzfb.png"></img>}
+      </Modal>
     </div>
   );
 }
