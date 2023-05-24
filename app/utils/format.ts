@@ -1,10 +1,8 @@
 export function prettyObject(msg: any) {
   console.log("【这是返回的错误信息】", msg);
   if (typeof msg !== "string") {
-    if (msg.includes("account/api-keys")) {
-      msg = JSON.stringify(
-        "填写的KEY有误，请检查key前后是否有空格或者输入错误！",
-      );
+    if (typeof msg == "object" && msg.message) {
+      msg = JSON.stringify(msg.message);
     } else {
       msg = JSON.stringify(msg, null, "  ");
     }
