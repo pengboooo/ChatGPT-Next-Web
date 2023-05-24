@@ -484,7 +484,7 @@ export function Settings() {
         </List>
 
         <List>
-          {enabledAccessControl ? (
+          {/* {enabledAccessControl ? (
             <ListItem
               title={Locale.Settings.AccessCode.Title}
               subTitle={Locale.Settings.AccessCode.SubTitle}
@@ -500,7 +500,7 @@ export function Settings() {
             </ListItem>
           ) : (
             <></>
-          )}
+          )} */}
 
           {!accessStore.hideUserApiKey ? (
             <ListItem
