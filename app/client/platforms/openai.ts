@@ -96,6 +96,21 @@ export class ChatGPTApi implements LLMApi {
               responseText = await res.clone().text();
               return finish();
             }
+            if (contentType?.includes("text/html")) {
+              const responseTexts = [responseText];
+              let extraInfo = prettyObject({
+                error: true,
+                message:
+                  "账号的key填写有误，请仔细检查key前后是否有空格，或者是否有填写错误",
+              });
+              if (extraInfo) {
+                responseTexts.push(extraInfo);
+              }
+
+              responseText = responseTexts.join("\n\n");
+
+              return finish();
+            }
 
             if (
               !res.ok ||
