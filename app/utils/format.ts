@@ -1,5 +1,5 @@
 export function prettyObject(msg: any) {
-  console.log("【这是返回的错误信息】", msg);
+  const obj = msg;
   if (typeof msg !== "string") {
     if (typeof msg == "object" && msg.message) {
       msg = JSON.stringify(msg.message);
@@ -7,7 +7,11 @@ export function prettyObject(msg: any) {
       msg = JSON.stringify(msg, null, "  ");
     }
   }
-
-  const prettyMsg = ["```json", msg, "```"].join("\n");
-  return prettyMsg;
+  if (msg === "{}") {
+    return obj.toString();
+  }
+  if (msg.startsWith("```json")) {
+    return msg;
+  }
+  return ["```json", msg, "```"].join("\n");
 }

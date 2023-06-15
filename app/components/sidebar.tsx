@@ -160,7 +160,7 @@ export function SideBar(props: { className?: string }) {
       <div className={styles["sidebar-header"]}>
         <div className={styles["sidebar-title"]}>搏老师的chatGPT镜像</div>
         <div className={styles["sidebar-sub-title"]}>
-          购买key的请添加微信:boaibo0626
+          搭建镜像不易,还望各位支持！
         </div>
         <div className={styles["sidebar-sub-title"]}>
           key30元一个,买key送chatgpt账号送谷歌邮箱
