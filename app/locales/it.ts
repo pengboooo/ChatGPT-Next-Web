@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const it: LocaleType = {
+const it: PartialLocaleType = {
   WIP: "Work in progress...",
   Error: {
     Unauthorized:
@@ -63,13 +63,7 @@ const it: LocaleType = {
   Settings: {
     Title: "Impostazioni",
     SubTitle: "Tutte le impostazioni",
-    Actions: {
-      ClearAll: "Cancella tutti i dati",
-      ResetAll: "Resetta tutte le impostazioni",
-      Close: "Chiudi",
-      ConfirmResetAll: "Sei sicuro vuoi cancellare tutte le impostazioni?",
-      ConfirmClearAll: "Sei sicuro vuoi cancellare tutte le chat?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "Tutte le lingue",
@@ -78,6 +72,11 @@ const it: LocaleType = {
     FontSize: {
       Title: "Dimensione carattere",
       SubTitle: "Regolare la dimensione dei caratteri del contenuto della chat",
+    },
+    InjectSystemPrompts: {
+      Title: "Inserisci Prompts di Sistema",
+      SubTitle:
+        "Aggiungi forzatamente un prompt di sistema simulato di ChatGPT all'inizio della lista dei messaggi per ogni richiesta",
     },
     Update: {
       Version: (x: string) => `Versione: ${x}`,
@@ -95,8 +94,10 @@ const it: LocaleType = {
       SubTitle: "Preview markdown in bubble",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Show a mask splash screen before starting new chat",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Show a mask splash screen before starting new chat",
+      },
     },
     Prompt: {
       Disable: {
@@ -158,6 +159,11 @@ const it: LocaleType = {
       Title: "Penalità di presenza",
       SubTitle:
         "Un valore maggiore aumenta la probabilità di parlare di nuovi argomenti",
+    },
+    FrequencyPenalty: {
+      Title: "Penalità di frequenza",
+      SubTitle:
+        "Un valore maggiore che diminuisce la probabilità di ripetere la stessa riga",
     },
   },
   Store: {
@@ -230,6 +236,12 @@ const it: LocaleType = {
     Close: "Close",
     Create: "Create",
     Edit: "Edit",
+  },
+  Exporter: {
+    Model: "Modello",
+    Messages: "Messaggi",
+    Topic: "Argomento",
+    Time: "Tempo",
   },
 };
 
