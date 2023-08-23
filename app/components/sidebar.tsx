@@ -162,16 +162,23 @@ export function SideBar(props: { className?: string }) {
           搭建镜像不易,还望各位支持！
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          key30元一个,买key送chatgpt账号送谷歌邮箱
+          key30元一个,买key送官方chatgpt账号
           <br />
           <span className={styles["sidebar-sub-red"]}>
             承诺:一人一号，改一赔十
           </span>
         </div>
         <div className={styles["sidebar-sub-SP"]}>
-          <span className={styles["sidebar-sub-text"]}>直接购买:</span>
+          <span className={styles["sidebar-sub-text"]}>在线购买:</span>
           <div className={styles["sidebar-sub-reds"]}>
-            <IconButton
+            <Link to={"https://key.ppxgpt.com"}>
+              <IconButton
+                icon={<SettingsIcon />}
+                text="去购买（自动发货）"
+                shadow
+              />
+            </Link>
+            {/* <IconButton
               className={styles["sidebar-bar-button"] + " sidebar-bar-buttons"}
               text="支付宝"
               onClick={() => {
@@ -184,7 +191,7 @@ export function SideBar(props: { className?: string }) {
               onClick={() => {
                 setShowModal(true);
               }}
-            ></IconButton>
+            ></IconButton> */}
           </div>
           {/* <Linka
             href={UPDATE_URL1}
